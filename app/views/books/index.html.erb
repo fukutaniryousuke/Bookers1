@@ -6,14 +6,18 @@
 
 <h1>Books</h1>
 
-<% @books.each do |book| %>
+
 <table>
     <thead>
-<tr><p>Title</p></tr>
-<tr><p>Body</p></tr>
+        <tr>
+<th><p>Title</p></th>
+<th><p>Body</p></th>
+<td colspan ="3"></td>
+        </tr>
     </thead>
     
     <tbody>
+        <% @books.each do |book| %>
         <tr>
 <td><span><%= book.title %></span></td>
 
@@ -26,6 +30,7 @@
     </tbody>
 </table>
 
+<div class="create-box">
 <h4>New Book</h4>
 
 <% if @book.errors.any? %>
@@ -46,3 +51,4 @@
 <%= f.submit 'Create Book' %>.
 
 <% end %>
+</div>
